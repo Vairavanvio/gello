@@ -29,6 +29,9 @@ func guestbookKey(c appengine.Context) *datastore.Key {
 
 func root(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
+
+	c.Infof("called root")
+
 	// Ancestor queries, as shown here, are strongly consistent with the High
 	// Replication Datastore. Queries that span entity groups are eventually
 	// consistent. If we omitted the .Ancestor from this query there would be
@@ -68,6 +71,9 @@ const guestbookTemplateHTML = `
 
 func sign(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
+
+	c.Infof("called root")
+
 	g := Greeting{
 		Content: r.FormValue("content"),
 		Date:    time.Now(),
