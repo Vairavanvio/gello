@@ -48,7 +48,9 @@ func root(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-var guestbookTemplate = template.Must(template.New("guestbook.html").ParseFiles("views/guestbook.html"))
+var guestbookTemplate = template.Must(
+	template.New("guestbook.html").ParseFiles("views/guestbook.html"),
+)
 
 func sign(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
