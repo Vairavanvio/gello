@@ -1,4 +1,4 @@
-<html>
+{{template "head" .}}
   <body>
         {{range .}}
           {{with .Author}}
@@ -13,4 +13,4 @@
           <div><input type="submit" value="Sign Guestbook"></div>
         </form>
   </body>
-</html>
+{{template "foot" .}}

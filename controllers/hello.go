@@ -49,7 +49,11 @@ func root(w http.ResponseWriter, r *http.Request) {
 }
 
 var guestbookTemplate = template.Must(
-	template.New("guestbook.html").ParseFiles("views/guestbook.html"),
+	template.New("guestbook.html").ParseFiles(
+		"views/guestbook.html",
+		"views/layout/head.html",
+		"views/layout/foot.html",
+	),
 )
 
 func sign(w http.ResponseWriter, r *http.Request) {
